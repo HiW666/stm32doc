@@ -1,0 +1,38 @@
+void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);//NVIC分组
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);//nvic初始化
+
+
+
+
+#define NVIC_PriorityGroup_0         ((uint32_t)0x700) /*!< 0 bits for pre-emption priority(抢占优先级)
+                                                            4 bits for subpriority */(响应先级)
+#define NVIC_PriorityGroup_1         ((uint32_t)0x600) /*!< 1 bits for pre-emption priority(抢占优先级)
+                                                            3 bits for subpriority */(响应先级)
+#define NVIC_PriorityGroup_2         ((uint32_t)0x500) /*!< 2 bits for pre-emption priority(抢占优先级)
+                                                            2 bits for subpriority */(响应先级)
+#define NVIC_PriorityGroup_3         ((uint32_t)0x400) /*!< 3 bits for pre-emption priority(抢占优先级)
+                                                            1 bits for subpriority */(响应先级)
+#define NVIC_PriorityGroup_4         ((uint32_t)0x300) /*!< 4 bits for pre-emption priority(抢占优先级)
+                                                            0 bits for subpriority */(响应先级)
+                                    
+
+        NVIC分组                  配置nvic的(抢占优先级)等级      配置nvic的(响应先级)等级
+  ============================================================================================================================
+    NVIC_PriorityGroup   | NVIC_IRQChannelPreemptionPriority | NVIC_IRQChannelSubPriority  | Description
+  ============================================================================================================================
+   NVIC_PriorityGroup_0  |                0                  |            0-15             |   0 bits for pre-emption priority
+                         |                                   |                             |   4 bits for subpriority
+  ----------------------------------------------------------------------------------------------------------------------------
+   NVIC_PriorityGroup_1  |                0-1                |            0-7              |   1 bits for pre-emption priority
+                         |                                   |                             |   3 bits for subpriority
+  ----------------------------------------------------------------------------------------------------------------------------    
+   NVIC_PriorityGroup_2  |                0-3                |            0-3              |   2 bits for pre-emption priority
+                         |                                   |                             |   2 bits for subpriority
+  ----------------------------------------------------------------------------------------------------------------------------    
+   NVIC_PriorityGroup_3  |                0-7                |            0-1              |   3 bits for pre-emption priority
+                         |                                   |                             |   1 bits for subpriority
+  ----------------------------------------------------------------------------------------------------------------------------    
+   NVIC_PriorityGroup_4  |                0-15               |            0                |   4 bits for pre-emption priority
+                         |                                   |                             |   0 bits for subpriority                       
+  ============================================================================================================================
+@endcode                             
